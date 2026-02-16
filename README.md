@@ -41,14 +41,14 @@ text inside window borders:
 window border color:
 
 ```html
-<div> class ="sec_color" background-color:rgb(`+cur_theme[1][0]+`,`+cur_theme[1][1]+`,`+cur_theme[1][2]+`)"></div> 
+<div> class ="sec_color" style="background-color:rgb(`+cur_theme[1][0]+`,`+cur_theme[1][1]+`,`+cur_theme[1][2]+`)"></div> 
 ```
 
 
 text color inside windows:
 
 ```html
-<div style="color:rgb(`+cur_theme[3][0]+`,`+cur_theme[3][1]+`,`+cur_theme[3][2]+`);" class="text_color"></div>
+<div class="text_color" style="color:rgb(`+cur_theme[3][0]+`,`+cur_theme[3][1]+`,`+cur_theme[3][2]+`);"></div>
 ```
 
 background color in windows:
