@@ -22,8 +22,8 @@ After that, you need to make make_hobby_window function like this:
 ```javascript
 make_hobby_window() {
   var html = "<div> about me </div>";
-  var win_id = make_window(null,null,win_width,win_height,"Warning",html);
+  var win_id = make_window(null,null,win_width,win_height,"Hobbies",html);
   add_icons_to_task_bar(win_id,"favorite_hobbies");
 }
 ```
-The first two parmeters are x and y positons, leaving them null makes it go to the center of the screen
+The first two parmeters in make_window are x and y positons, leaving them null makes it go to the center of the screen
