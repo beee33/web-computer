@@ -10,7 +10,7 @@ rm  *guestbook*
 <h3>Adding your own app</h3>
 In order to create you own app. you need to edit main_thread.js and make a new applicaiton using make_application()
 <br>
-where the first string is application id, then the name of the function, titlebar name, location of icon, location on desktop, application type: app, as well as the function envoked when the user clicks on the icon. 
+where the first string is application id, then the name of the function, titlebar name, file path of icon, location on desktop, application type: app, as well as the function envoked when the user clicks on the icon. 
 <br>
 <br>
 like this:
@@ -31,7 +31,6 @@ function make_hobby_window() {
 }
 ```
 The first two parmeters in make_window are x and y positons, leaving them null makes it go to the center of the screen. The third parmeter is the window width. The fourth parmeter is the window height. Both are numbers representing pixels. 
-
 <h4>Styling</h4>
 These are the divs you need to add in order for your text and backgrounds inside your window to match the theme.
 
