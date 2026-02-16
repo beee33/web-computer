@@ -1,10 +1,8 @@
 <h1>My websites code</h1>
 This is a custom desktop environment built for personal websites. 
-
-This is the code for my website https://isopodheaven.com 
 <br>
-I removed almost all the code relating to my myself in this repo, so you can make your own fake desktop enviroment using my template to make it your own.
-
+<br>
+I removed almost all the code relating to my myself in this repo, so you can make your own fake desktop enviroment using my template to make it unique to yourself. If you want to see what it could look like, visit my website at https://isopodheaven.com
 <h3>Install</h3>
 
 download:
