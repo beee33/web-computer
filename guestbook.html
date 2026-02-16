@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="icon" type="image/png" href="/aaxolotl.png">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta charset="utf-8">
+                <meta name="description" content="My digital guestbook!">
+	</head>
+	<body style="height:900px; background-image: url(c-programming.gif)">
+		<div style="border-radius: 10px;padding: 10px; background: #5f6fa0;margin: 30px;">
+			<div>
+				<div>
+					<h3 style="margin-top: 2px;color: floralwhite;margin-bottom: 2px;text-align: center;text-align: center;font-family: OCA Std, monospace;font-size: 30px;">My personal digital Guestbook</h3>
+					<img style="margin: auto; display: block;width: 200px;" src="/miku-vocaloid.gif">
+					<div style="text-align: center;width: 600px;margin: auto;">
+					</div>
+				</div>
+			</div>
+			<div id=posts>
+				<div>
+					<div style="display: grid; place-content: center">
+						<div style="padding: 10px;margin: 10px;">
+							<h3 style="margin-top:0px;color: floralwhite;margin-bottom: 10px;font-family: Arial, sans-serif;">Write any comments, thoughts, improvements, ideas or anything.</h3>
+							<div>Name <input placeholder="Optional" id=name></input><button onclick=make_post()>Submit</button></div>
+							<textarea id="post" rows="2" style="width:100%;resize: vertical;"  placeholder="Required: Please no personal information or anything illegal, as it will get removed AND I WILL INSTALL LINUX ON YOUR MACHINES."></textarea>
+						</div>
+					</div>
+
+				</div>
+				<div id="post_viewer"></div>		
+					<div style="margin: 10px;">
+						<button onclick=prev_option()>prev</button>
+						<button onclick=next_option()>next</button>
+						<div id = index_viewer> index 1 of 1<div>
+					</div>
+				</div>
+				<div>
+					<h2 style="color: floralwhite;margin-top: 20px;margin-bottom: 0px;">Links:</h2>
+				</div>
+				<div style="font-size: larger;">
+					<a style="color: floralwhite;text-decoration-color: floralwhite;" target="_blank" href="https://weather.gov">Personal Website!</a>
+
+				</div>
+			
+		</div>
+
+	</body>
+	<script>
+		var default_size = 8;
+		var current_page = 0;
+		
+		var book_len;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                                book_len = parseInt(xhttp.responseText);
+                        }
+
+                };
+                var prep_script = "/length_guestbook.php";
+                xhttp.open("GET", prep_script, false);
+                xhttp.send();
+
+                console.log(book_len);
+		function make_post() {
+			var post_resp;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					post_resp = JSON.parse(xhttp.responseText);
+					
+					console.log(post_resp)
+					if(post_resp["error"] != "none") {
+						alert(post_resp["error"])
+					}
+					load_index()
+				}
+
+			};
+			
+			var post_name = document.getElementById("name").value
+			var post_text = document.getElementById("post").value
+			
+			if(post_name.replaceAll(" ","") == ""){
+				post_name = "Anonymous"
+			}
+					
+			// yes hardcoded keys are bad, but this just prevents automated bots replace key with a random string
+			if(post_text.replaceAll(" ","") != "") {
+				var prep_script = "/sign_guestbook.php?key=&post="+post_text+"&name="+post_name;
+				console.log(post_text)
+				xhttp.open("GET", prep_script, false);
+				xhttp.send();
+			} else {
+				alert("post can't be empty")
+			}
+
+		}
+
+		function load_index() {
+			var json_res;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					json_res = JSON.parse(xhttp.responseText);
+				}
+
+			};
+			var prep_script = "/guestbook.php?index="+current_page;
+			xhttp.open("GET", prep_script, false);
+                	xhttp.send();         
+
+			var post_to_get = document.getElementById("post_viewer");
+			while (post_to_get.hasChildNodes()) {
+				post_to_get.removeChild(post_to_get.children[0]);
+			}
+			for(var post of json_res["posts"]) {
+				var main_div = document.createElement("div");
+				main_div.innerHTML = 
+
+					`<div style="margin: 10px;background-color: #dfdfdf;padding: 10px;">
+						<div style="display: block;">
+							<div style="display: flow-root;font-size: larger;">
+								<div style="float: left;"style="display: flow-root;">
+									owo
+								</div>
+								<div style="float: right;">
+									time 
+								</div>
+							</div>
+						</div>
+						<div>
+							uwu
+						</div>
+					</div>
+					`;
+				
+				post_to_get.appendChild(main_div);
+				
+				main_div.children[0].children[1].innerText = atob(post["content"])
+				main_div.children[0].children[0].children[0].children[0].innerText = atob(post["post"])
+				main_div.children[0].children[0].children[0].children[1].innerText = atob(post["time"]) 
+
+
+			}
+		}
+		
+		load_index()
+
+		function update_id_page() {
+			var elem = document.getElementById("index_viewer");
+			elem.innerHTML = "page " + (current_page + 1) + " of "+ (Math.ceil(book_len/default_size))
+		}
+		update_id_page()
+		function next_option() {
+			
+			if( Math.ceil(book_len/default_size) -1 > current_page) {
+				current_page += 1
+				update_id_page()
+				load_index()
+			}
+		}
+		function prev_option() {
+			
+			if( current_page != 0) {
+				current_page -= 1
+				update_id_page()
+				load_index()
+			}
+		}
+	</script>
+</html>
