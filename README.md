@@ -34,6 +34,7 @@ The first two parmeters in make_window are x and y positons, leaving them null m
 <h4>Styling</h4>
 These are the divs you need to add in order for your text and backgrounds inside your window to match the theme.
 
+<br>
 
 text inside window borders:
 
