@@ -1,5 +1,5 @@
 <h1>My websites code</h1>
-
+This is a custom desktop environment built for personal websites. 
 
 This is the code for my website https://isopodheaven.com 
 <br>
