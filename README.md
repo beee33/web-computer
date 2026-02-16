@@ -21,7 +21,7 @@ make_application("favorite_hobbies","make_hobby_window()","My Hobbies","/desktop
 ```
 <br>
 <br>
-After that, you need to make make_hobby_window function like this:
+After that, you need to make make_hobby_window also in main_thread.js function like this:
 
 ```javascript
 make_hobby_window() {
