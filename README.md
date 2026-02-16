@@ -3,6 +3,10 @@ This is the code for my website https://isopodheaven.com
 <br>
 I removed almost all the code relating to myself in this repo, so you can make your own website using my template. I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website, you would need to create your own database populate all the php files with new information. If you dont want to do that, you can just delete any file with the word guestbook in it.
 
+```bash
+rm  *guestbook*
+```
+
 <h3>Adding your own app</h3>
 In order to create you own app. you need to edit main_thread.js and make a new applicaiton using make_application()
 <br>
