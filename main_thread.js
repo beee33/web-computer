@@ -635,14 +635,14 @@ function make_web_browser() {
 	}
 }
 
-
+// if you delete any sort of images, make sure to remove them from here. However please keep the string "beee33 on github for the orignal source code".
 function make_credits() {
         var win_id = make_window(null,null,400,300,"Credits",`
        	                <div style="word-wrap: anywhere;margin-top: 20px;margin-left: 10px;margin-right: 10px;color:rgb(`+cur_theme[3][0]+`,`+cur_theme[3][1]+`,`+cur_theme[3][2]+`);" class="text_color">
         <span style="font-size:x-large">Credits:</span>
         <div class="line_br"></div>
         <div class="line_br"></div>
-		John for the all code/programs/backend/icons and everything else except below. No AI was used in developing this website. I hate those dam tin-skined bloatware to society, cogsucking, meetless and soul less Clankers. Execpt Miku.
+		beee33 on github for the code/programs/backend/icons and everything else except below. No AI was used in developing this website. I hate those dam tin-skined bloatware to society, cogsucking, meetless and soul less Clankers. Execpt Miku.
 		<div class="line_br"></div>
 		<div class="line_br"></div>
 		Dropper icon	
