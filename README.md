@@ -66,3 +66,4 @@ background color in windows:
 most things are stored in config.js. the rest(like ascii icons) on the first few lines of main_thread.js 
 
 <h4>Enabling The guestbook</h4>
+todo
