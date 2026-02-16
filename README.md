@@ -25,9 +25,9 @@ After that, you need to make make_hobby_window also in main_thread.js function l
 
 ```javascript
 function make_hobby_window() {
-  var html = "<div> about me </div>";
-  var win_id = make_window(null,null,500,300,"Hobbies",html);
-  add_icons_to_task_bar(win_id,"favorite_hobbies");
+	var html = `<div class="text_color" style="color:rgb(`+cur_theme[3][0]+`,`+cur_theme[3][1]+`,`+cur_theme[3][2]+`);">about me</div>`
+	var win_id = make_window(null,null,500,300,"Hobbies",html);
+	add_icons_to_task_bar(win_id,"favorite_hobbies");
 }
 ```
 The first two parmeters in make_window are x and y positons, leaving them null makes it go to the center of the screen. The third parmeter is the window width. The fourth parmeter is the window height. Both are numbers representing pixels. 
