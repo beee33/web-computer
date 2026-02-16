@@ -129,8 +129,9 @@ make_application("me","make_about_me()","About Me","/desktop_icons/person.png",[
 make_application("meme","make_meme()","Random Meme","/desktop_icons/memes.png",[4,1],"app",function() {make_meme()});
 make_application("time","make_time()","Server Uptime Status",null,[3,2],"app",function() {make_time()});
 make_application("git","make_git()","Where to find my code!","/desktop_icons/forgejo.svg",[3,3],"app",function() {make_git()});
-make_application("sign","make_guestbook()","Sign the Digital Guestbook!","/desktop_icons/guestbook.png",[5,6],"app",function() {make_git()});
 
+//uncomment this to add guestbook support
+//make_application("sign","make_guestbook()","Sign the Digital Guestbook!","/desktop_icons/guestbook.png",[5,6],"app",function() {make_git()});
 
 
 function shuffle_list(array_in) {
