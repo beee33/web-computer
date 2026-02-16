@@ -1,8 +1,19 @@
 <h1>My websites code</h1>
 This is a custom desktop environment built for personal websites. 
+
+<h1>features</h1>
+Fake systemd like boot:
+User login page:
+Window manager:
+Custom apps:
+Theming:
+Digital guestbook:
+
+
+
 <br>
 <br>
-I removed almost all the code relating to my myself in this repo, so you can make your own fake desktop enviroment using my template to make it unique to yourself. If you want to see what it could look like, visit my website at https://isopodheaven.com
+I removed almost all the code relating to my myself in this repo(eg: personal blogs, about me page, github links), so you can make your own fake desktop enviroment using my template to make it unique to yourself. If you want to see what it could look like, visit my website at https://isopodheaven.com
 <h3>Install</h3>
 
 download:
