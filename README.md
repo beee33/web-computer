@@ -24,7 +24,7 @@ make_application("favorite_hobbies","make_hobby_window()","My Hobbies","/desktop
 After that, you need to make make_hobby_window also in main_thread.js function like this:
 
 ```javascript
-make_hobby_window() {
+function make_hobby_window() {
   var html = "<div> about me </div>";
   var win_id = make_window(null,null,win_width,win_height,"Hobbies",html);
   add_icons_to_task_bar(win_id,"favorite_hobbies");
