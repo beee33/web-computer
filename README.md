@@ -1,11 +1,31 @@
 <h1>My websites code</h1>
 This is the code for my website https://isopodheaven.com 
 <br>
-I removed almost all the code relating to myself in this repo, so you can make your own fake desktop enviroment using my template. I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website. If you would want to implement it, go to: <a href="#enabling-the-guestbook">Enabling the Guestbook</a>. If you dont want to do that, you can just delete any file with the word guestbook in it:
+I removed almost all the code relating to my myself in this repo, so you can make your own fake desktop enviroment using my template to make it your own.
+
+<h3>Install</h3>
+
+download:
+
+```bash
+git clone https://github.com/beee33/web-computer
+cd web-computer
+```
+
+I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website. If you would want to implement it, go to: <a href="#enabling-the-guestbook">Enabling the Guestbook</a>. If you dont want to do that, you can just delete any file with the word guestbook in it:
 
 ```bash
 rm  *guestbook*
 ```
+
+<h4>Running</h4>
+You can just plop this into any web server eg: apache or nginx.
+
+For testing you can use npx instead:
+```
+npx http-server ./ -o -p 9999 
+```
+
 
 <h3>Adding your own app</h3>
 In order to create you own app. you need to edit main_thread.js and make a new applicaiton using make_application()
