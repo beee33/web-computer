@@ -27,3 +27,36 @@ make_hobby_window() {
 }
 ```
 The first two parmeters in make_window are x and y positons, leaving them null makes it go to the center of the screen
+
+<h4>Styling</h4>
+These are the divs you need to add in order for your text and backgrounds inside your window to match the theme.
+
+
+text inside window borders:
+
+```html
+<div class ="sel_color" color:rgb(`+cur_theme[2][0]+`,`+cur_theme[2][1]+`,`+cur_theme[2][2]+`);">
+```
+
+window border color:
+
+```html
+<div> class ="sec_color" background-color:rgb(`+cur_theme[1][0]+`,`+cur_theme[1][1]+`,`+cur_theme[1][2]+`)"></div> 
+```
+
+
+text color inside windows:
+
+```html
+<div style="color:rgb(`+cur_theme[3][0]+`,`+cur_theme[3][1]+`,`+cur_theme[3][2]+`);" class="text_color"></div>
+```
+
+background color in windows:
+
+```html
+<div class="main_color" style="background-color:rgb(`+cur_theme[0][0]+`,`+cur_theme[0][1]+`,`+cur_theme[0][2]+`)">
+```
+
+
+
+
