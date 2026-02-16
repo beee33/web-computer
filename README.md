@@ -1,7 +1,7 @@
 <h1>My websites code</h1>
 This is the code for my website https://isopodheaven.com 
 <br>
-I removed almost all the code relating to myself in this repo, so you can make your own fake desktop enviroment using my template. I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website. If you would want to implement it, you would create your own database populate all the php files with mysqli parmeters. If you dont want to do that, you can just delete any file with the word guestbook in it:
+I removed almost all the code relating to myself in this repo, so you can make your own fake desktop enviroment using my template. I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website. If you would want to implement it, go to: <a href="#enabling-the-guestbook">Enabling the Guestbook</a>. If you dont want to do that, you can just delete any file with the word guestbook in it:
 
 ```bash
 rm  *guestbook*
@@ -65,4 +65,4 @@ background color in windows:
 
 most things are stored in config.js. the rest(like ascii icons) on the first few lines of main_thread.js 
 
-
+<h4>Enabling The guestbook</h4>
