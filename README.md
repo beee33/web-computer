@@ -3,11 +3,33 @@ This is a custom desktop environment built for personal websites.
 
 <h1>features</h1>
 Fake systemd like boot:
+
+https://github.com/user-attachments/assets/1a725e0c-fc18-4c6e-a639-19f6ab509db1
+
+
+
+
 User login page:
+
+https://github.com/user-attachments/assets/59f0e6e9-ce51-4b9b-9702-dcfd737e2916
+
+
 Window manager:
+
+https://github.com/user-attachments/assets/a838853b-9bb4-46f6-8392-9de0c9e2c50a
+
+
 Custom apps:
 Theming:
+
+https://github.com/user-attachments/assets/158b2100-3c7c-4816-b430-b8df459d5c1c
+
+
 Digital guestbook:
+
+
+
+https://github.com/user-attachments/assets/ec40b0b4-4709-4b0e-bd90-e6680b2cec21
 
 
 
