@@ -43,7 +43,8 @@ https://github.com/user-attachments/assets/ec40b0b4-4709-4b0e-bd90-e6680b2cec21
 
 <br>
 <br>
-I removed almost all the code relating to my myself in this repo(eg: personal blogs, about me page, github links), so you can make your own fake desktop enviroment using my template to make it unique to yourself. If you want to see what it could look like, visit my website at https://isopodheaven.com
+I removed almost all the code relating to my myself in this repo(eg: personal blogs, about me page, github links), so you can make your own fake desktop enviroment using this template to make it unique to yourself. If you want to see what can be done: visit my website at https://isopodheaven.com
+
 <h3>Install</h3>
 
 download:
@@ -53,7 +54,7 @@ git clone https://github.com/beee33/web-computer
 cd web-computer
 ```
 
-I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website. If you would want to implement it, go to: <a href="#enabling-the-guestbook">Enabling the Guestbook</a>. If you dont want to do that, you can just delete any file with the word guestbook in it:
+I kept my code for my guestbook https://isopodheaven.com/guestbook.html but removed all assocaitons to my website. If you would want to implement it, go to: <a href="#enabling-the-guestbook">Enabling the Guestbook</a>. If you dont want to do that, you can just delete any file with the word guestbook in it. The website will not break:
 
 ```bash
 rm  *guestbook*
@@ -63,7 +64,7 @@ rm  *guestbook*
 You can just plop this into any web server eg: apache or nginx.
 
 For testing you can use npx instead:
-```
+```bash
 npx http-server ./ -o -p 9999 
 ```
 
@@ -71,7 +72,7 @@ npx http-server ./ -o -p 9999
 <h3>Adding your own app</h3>
 In order to create you own app. you need to edit main_thread.js and make a new applicaiton using make_application()
 <br>
-where the first string is application id, then the name of the function, titlebar name, file path of icon, location on desktop, application type: app, as well as the function envoked when the user clicks on the icon. 
+where the first parameter is application id, then the name of the function, titlebar name, file path of icon, location on desktop, application type( the only option is app), as well as the function envoked when the user clicks on the icon. 
 <br>
 <br>
 like this:
@@ -91,10 +92,11 @@ function make_hobby_window() {
 	add_icons_to_task_bar(win_id,"favorite_hobbies");
 }
 ```
-The first two parmeters in make_window are x and y positons, leaving them null makes it go to the center of the screen. The third parmeter is the window width. The fourth parmeter is the window height. Both are numbers representing pixels. 
+The first two parmeters in make_window are x and y positions, leaving them both null makes it go to the center of the screen. The third parmeter is the window width. The fourth parmeter is the window height. Both are numbers representing pixels. The last parameter is the html that will be put into the window.
 <h4>Styling</h4>
 These are the divs you need to add in order for your text and backgrounds inside your window to match the theme.
 
+<br>
 <br>
 
 text inside window borders:
@@ -124,7 +126,7 @@ background color in windows:
 
 <h4>Configuration</h4>
 
-most things are stored in config.js. the rest(like ascii icons) on the first few lines of main_thread.js 
+most things are stored in config.js. The rest(like ascii icons) on the first few lines of main_thread.js. 
 
 <h4>Enabling The guestbook</h4>
 todo
