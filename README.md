@@ -1,5 +1,7 @@
 <h1>My websites code</h1>
-This is a custom desktop environment built for personal websites. 
+This is a custom desktop environment built for personal websites, because the modern web is boring. 
+
+I did not use AI to make this website
 
 <h1>features</h1>
 Fake systemd like boot:
