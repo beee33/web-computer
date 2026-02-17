@@ -20,6 +20,14 @@ https://github.com/user-attachments/assets/a838853b-9bb4-46f6-8392-9de0c9e2c50a
 
 
 Custom apps:
+
+
+
+https://github.com/user-attachments/assets/943725c3-f943-4553-99d3-58cd9f6828cb
+
+
+
+
 Theming:
 
 https://github.com/user-attachments/assets/158b2100-3c7c-4816-b430-b8df459d5c1c
