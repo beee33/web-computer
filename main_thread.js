@@ -731,15 +731,15 @@ function make_guestbook() {
 var left_items = 1;
 function make_random() {
 
-	if(om_left.length == 0) {
-		om_left = shuffle_list(OM_MESSAGE);
+	if (DISABLE_RANDOM_WARNING == false) {
+		if(om_left.length == 0) {
+			om_left = shuffle_list(OM_MESSAGE);
+		}
+
+		make_warn(om_left.pop(),false);
+		setTimeout(make_random, Math.floor(WARN_ONSET_DELAY+Math.random()*WARN_RANDOM))
+		}
 	}
-	
-	
-		
-	make_warn(om_left.pop(),false);
-	setTimeout(make_random, Math.floor(30000+Math.random()*120000))	
-}
 
 
 // generates a warning

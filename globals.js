@@ -9,6 +9,7 @@ var installed_programs = {};
 // third is for text on background color
 // fourth is text on main background
 
+WALLPAPER_DIR = "/wallpapers/"
 
 themes_desk["blue-pastel"] = [[255,255,255],[0,171,219],[153,244,252],[22,20,61]];
 themes_desk["green-pastel"] = [[255,255,255],[128, 244, 153],[44, 115, 59],[16,43,20]];
@@ -16,15 +17,20 @@ themes_desk["cyber-city"] = [[44,153,204],[16,18,86],[244, 161, 255],[212, 247, 
 
 var themes_wall = {};
 
-themes_wall["blue-pastel"] = "wallpaper.webp"
-themes_wall["green-pastel"] = "wallpaper3.webp"
-themes_wall["cyber-city"] = "wallpaper2.webp"
+themes_wall["blue-pastel"] = WALLPAPER_DIR+"wallpaper.webp"
+themes_wall["green-pastel"] = WALLPAPER_DIR+"wallpaper3.webp"
+themes_wall["cyber-city"] = WALLPAPER_DIR+"wallpaper2.webp"
 
 var THEME_NAME = "blue-pastel";
 
 // website that comes loaded with web browser, Alot of websites will not load due to CORS.
 var DEFAULT_WEBSITE = "https://weather.gov"
 
+
+/// This a dumb feature that will randomly make warning on the dekstop computer every few minutes
+/// You can disable them by setting DISABLE_RANDOM_WARNING true
+
+DISABLE_RANDOM_WARNING = false
 
 // list of ominous messages that will randomly appear
 var OM_MESSAGE = [
@@ -45,6 +51,13 @@ var OM_MESSAGE = [
 	"None of these are real",
 	"Was Sisyphus happy and are you?",
 ]
+// How long until the first warning appears in milliseconds
+WARN_ONSET_DELAY = 30000
+
+// after the delay, an a random time between 0 and WARN_RANDOM for a random warning in milliseconds
+WARN_RANDOM = 120000
+
+
 
 // OS name
 var OS_NAME = "BeeOS"
@@ -107,6 +120,7 @@ var MEMES = [
 ]
 
 // program start function, program human name, icon path(null if none), appear in desktop (null if not and coords if yes starts at 1,1 [x,y])
+// instuctions to create an app is here: https://github.com/beee33/web-computer/blob/main/README.md#adding-your-own-app
 // you can comment any of these lines to remove an app
 make_application("theme_picker","make_theme_window()","Theme Picker","/desktop_icons/dropper.jpg",[1,1],"app",function() {make_theme_window()});
 make_application("web_browser","make_web_browser()","Web Browser","desktop_icons/www_icon.png",[1,2],"app",function() {make_web_browser()});
@@ -180,12 +194,13 @@ var array_of_functions_for_boot = [
 
 
 
-// how many error messages will appear when "do not click button appears"
+// how many error messages will appear when "when user clicks the do not click button"
 var REPEAT_WARN = 15;
 
 // testing
 var debug = false;
 var skip_start = false;
+
 
 // width of the edges of window
 var border_width = 4;
