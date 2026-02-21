@@ -6,6 +6,9 @@ This is a custom desktop environment built for personal websites, because the mo
 I did not use AI to make this website
 
 <h1>features</h1>
+*Note: some of the apps I removed from this version because It would be boring for you to delete all of my blogs, this version is much easier to personalize :3 
+<br>
+<br>
 Fake systemd like boot:
 
 https://github.com/user-attachments/assets/1a725e0c-fc18-4c6e-a639-19f6ab509db1
@@ -74,7 +77,7 @@ npx http-server ./ -o -p 9999
 
 
 <h3>Adding your own app</h3>
-In order to create you own app. you need to edit main_thread.js and make a new applicaiton using make_application()
+In order to create you own app. you need to edit globals.js and make a new applicaiton using make_application()
 <br>
 where the first parameter is application id, then the name of the function, titlebar name, file path of icon, location on desktop, application type( the only option is app), as well as the function envoked when the user clicks on the icon. 
 <br>
@@ -130,7 +133,6 @@ background color in windows:
 
 <h4>Configuration</h4>
 
-most things are stored in config.js. The rest(like ascii icons) on the first few lines of main_thread.js. 
-
+most things are stored in config.js 
 <h4>Enabling The guestbook</h4>
 todo
