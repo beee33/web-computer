@@ -133,7 +133,6 @@ background color in windows:
 
 <h4>Configuration</h4>
 
-most things are stored in config.js. The rest(like ascii icons) on the first few lines of main_thread.js. 
-
+most things are stored in config.js 
 <h4>Enabling The guestbook</h4>
 todo
