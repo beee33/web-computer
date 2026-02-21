@@ -1,46 +1,4 @@
 
-
-// replace with your logo
-var bee_os_logo = `
-
-
- #                                 
- #                      ##     ###:
- #                    :#  #: #   .#
- # ##    ###    ###   #.  .# #     
- #   #     :#     :#  #    # # .   
- #   #  #   #  #   #  #    #   ##  
- #   #  #####  #####  #    #      #
- #   #  #      #      #.  .#      #
- #   #      #      #  :#  #: #.   #
- # ##    ###:   ###:    ##   :####.
-
-
-`
-
-// this is the ascii logo of your "os"
-var logo = `
-  *************************
-  ******@@@@@@@@%************
-  ********@%****@@#************
-  ********@%*****%@@************
-  ********@%*****@@@**************
-  ********@@@@@@@@******************
-  ********@%####@@********************
-  ********@%*****#@@******************
-  ********@%*****@@@******************
-  ******@@@@@@@@@@********************
-  ************************************
-  ************************************
-  ******************###****####*******
-  *****************##*##**##**##******
-    **************##***##*###*********
-      ************##***##**###********
-        **********##***##****###******
-         **********##*##**###*##******
-           *********###****####*******
-             *************************
-`
 // an list of ids for each exit button
 const x_buttons = new Set();
 
@@ -81,8 +39,6 @@ var ascii_jsons = new Map();
 var ascii_loops = new Map();
 
 
-// list of installed programs
-var installed_programs = {};
 
 var count_rows = 0;
 var count_cols = 0;
@@ -100,38 +56,8 @@ var audio_vol = VOLUME_DEFAULT;
 
 var memes_list = structuredClone(MEMES);
 
-// Function to make programs easier
 
-function make_application(id,function_param,human_name,icon_path,in_desktop,type,funct) {
-	var app = {
-		"function_param":function_param,
-		"human_name":human_name,
-		"icon_path":icon_path,
-		"in_desktop":in_desktop,
-		"type":type,
-		"funct":funct
-	}
-	installed_programs[id] = app;	
-}
 
-// program start function, program human name, icon path(null if none), appear in desktop (null if not and coords if yes starts at 1,1 [x,y])
-// you can comment any of these lines to remove an app
-make_application("theme_picker","make_theme_window()","Theme Picker","/desktop_icons/dropper.jpg",[1,1],"app",function() {make_theme_window()});
-make_application("web_browser","make_web_browser()","Web Browser","desktop_icons/www_icon.png",[1,2],"app",function() {make_web_browser()});
-make_application("credits","make_credits()","Credits","/desktop_icons/credits.png",[1,3],"app",function() {make_credits()});
-make_application("about","make_about()","Welcome to BeeOS",null,null,"app",function() {make_about()});
-make_application("viewer","make_view()","Image view","/desktop_icons/picture_icon.png",null,"app",null);
-make_application("beefetch","make_beefetch()","System Info",null,[2,1],"app",function() {make_beefetch()});
-make_application("teto","make_teto()","Kasane Teto","/desktop_icons/teto.gif",[2,2],"app",function() {make_teto()});
-make_application("warning","make_warn()","Warning!","/desktop_icons/warn.png",null,"app",null);
-make_application("click","make_hack()","Do Not Click","/desktop_icons/warn.png",[2,3],"app",function() {make_hack()});
-make_application("me","make_about_me()","About Me","/desktop_icons/person.png",[3,1],"app",function() {make_about_me()});
-make_application("meme","make_meme()","Random Meme","/desktop_icons/memes.png",[4,1],"app",function() {make_meme()});
-make_application("time","make_time()","Server Uptime Status",null,[3,2],"app",function() {make_time()});
-make_application("git","make_git()","Where to find my code!","/desktop_icons/forgejo.svg",[3,3],"app",function() {make_git()});
-
-//uncomment this to add guestbook support
-//make_application("sign","make_guestbook()","Sign the Digital Guestbook!","/desktop_icons/guestbook.png",[5,6],"app",function() {make_git()});
 
 
 function shuffle_list(array_in) {
@@ -539,10 +465,10 @@ function make_beefetch() {
 
 	// Edit this with your fake system info
 	var items_in = [
-		"<span style=color:darkturquoise>guest</span>@<span style=color:darkturquoise>beeOS</span>",
+		"<span style=color:darkturquoise>guest</span>@<span style=color:darkturquoise>"+OS_NAME+"</span>",
 		"-----------",
-		"<span style=color:darkturquoise>OS</span>: beeOS",
-		"<span style=color:darkturquoise>Kernel</span>: beeOS Kernel 2.5",
+		"<span style=color:darkturquoise>OS</span>: "+OS_NAME,
+		"<span style=color:darkturquoise>Kernel</span>: "+OS_NAME+" Kernel 2.5",
 		"<span style=color:darkturquoise>Uptime</span>: " + time_string,
 		"<span style=color:darkturquoise>Programs</span>: "+Object.keys(installed_programs).length+" (Desktop)",
 		"<span style=color:darkturquoise>Shell</span>: bsh 5.8",
@@ -574,13 +500,13 @@ function make_beefetch() {
 		mob_adds ="width: fit-content;"
 	}
 	var new_text = `<div style="`+mob_adds+`;background-color:black;height:100%;color:white;">
-		<span style="font-family: Monospace;font-size:15px;white-space: pre;margin-top:0px;margin-bottom:0px;"><span style="color:lawngreen;">guest@beeOS</span>:<span style="color:cornflowerblue;;">~</span>$ beefetch </span>`;
+		<span style="font-family: Monospace;font-size:15px;white-space: pre;margin-top:0px;margin-bottom:0px;"><span style="color:lawngreen;">guest@`+OS_NAME+`</span>:<span style="color:cornflowerblue;;">~</span>$ beefetch </span>`;
 	for(var [index, item] of items_in.entries()) {
 		var new_item = make_new_line(index,item) ;
 
 		new_text += `<p style="font-family: Monospace;font-size:15px;white-space: pre;margin-top:0px;margin-bottom:0px;"><span>`+new_item + "</span></p>";
 	}
-	new_text += `<span style="font-family: Monospace;font-size:15px;white-space: pre;margin-top:0px;margin-bottom:0px;"><span style="color:lawngreen;">guest@beeOS</span>:<span style="color:cornflowerblue;;">~</span>$</span></div>`
+	new_text += `<span style="font-family: Monospace;font-size:15px;white-space: pre;margin-top:0px;margin-bottom:0px;"><span style="color:lawngreen;">guest@`+OS_NAME+`</span>:<span style="color:cornflowerblue;;">~</span>$</span></div>`
 	
 	var win_id = make_window(null,null,850,500,"beefetch",new_text);
         add_icons_to_task_bar(win_id,"beefetch");
@@ -766,7 +692,7 @@ function make_about() {
 		<div style="height:10px"></div>
 			`
         }
-        html += `<span style="font-size: larger;">Hello and welcome to BeeOS!</span> 
+        html += `<span style="font-size: larger;">Hello and welcome to `+OS_NAME+`!</span>
         <div style="height:10px"></div>
         <div>   
         This is a faux OS that would run in the browser. I wanted to make it look like you are using a Linux like OS. You can drag windows(click and hold the top of a window), execute programs on the desktop, change themes, close windows, drag icons on desktop and bring a application icon to the front by double clicking the taskbar. It is similar to KDE, cinnamon, and Windows desktop environment. 
@@ -1192,7 +1118,7 @@ async function stop_pc_inlogon() {
         }
 
 	document.getElementById("logon").style.visibility = "hidden";
-	spawn_line("Exiting beeOS")
+	spawn_line("Exiting "+OS_NAME)
 	await sleep(Math.random() * 1000);
 	spawn_line("Computer no longer computing");
 	await sleep(Math.random() * 100);
@@ -1508,7 +1434,7 @@ async function load_navbar() {
 	var icon_margin = 4;
 
 	node3.innerHTML += `
-		<img draggable="false" src="desktop_icons/os_logo.png" style="user-select: none;width:`+(taskbar_height-icon_margin*2)+`px;margin:`+icon_margin+`px;height:`+(taskbar_height-icon_margin*2)+`px;">
+		<img draggable="false" src="`+OS_ART_LOGO+`" style="user-select: none;width:`+(taskbar_height-icon_margin*2)+`px;margin:`+icon_margin+`px;height:`+(taskbar_height-icon_margin*2)+`px;">
 
 		</img>`;
         
@@ -1728,60 +1654,11 @@ async function main_start() {
 	function sleep(ms) {
   		return new Promise(resolve => setTimeout(resolve, ms));
 	}
-    
-    // these are the functions that appear to make that fake systemd boot
-    // first line is the string 
-    // second line is true: failed, false: success, null: no status 
-	var array_of_functions = [
 
-	// function() { spawn_line("welcome to beeOS!",false) },
-	function() { spawn_line("Loading initbeeFS",false)},
-	function() {spawn_line("loading miku",false)},
-	function() {spawn_line("loaded miku",false)},
-	function() {spawn_line("killing program manager program",false)},
-	function() {spawn_line("installing war thunder",false)},
-	function() {spawn_line("commiting war crimes",false)},
-	function() {spawn_line("removing Windows",false)},
-	function() {spawn_line(bee_os_logo,false)},
-	function() {spawn_line("being an Axolotl",false)},
-	function() {spawn_line("beesh shell loaded",false)},
-	function() {spawn_line("kernel tainted",null)},
-	function() {spawn_line("NVbedia kernel module loaded which taints kernel",null)},
-	function() {spawn_line("downloading anime girls",false)},	
-	function() {spawn_line("Starting bddm (Bee's Desktop Display Manager) ",false)},
-	function() {spawn_line("Started bddm",false)},
-	function() {spawn_line("Deleting all knowlege of Java",false)},
-	function() {spawn_line("Started rhinovirus",false)},
-	function() {spawn_line("Starting Project Zomboid server",false)},
-	function() {spawn_line("Started Project Zomboid server",false)},
-	function() {spawn_line("Ignored Arch BTW",false)},
-	function() {spawn_line("Discord kittens ignored",false)},
-	function() {spawn_line("Started touch grass",false)},
-	function() {spawn_line("Failed touch grass",true)},
-	function() {spawn_line("Killed children(in JavaScript)",false)},
-	function() {spawn_line("Started Hololive songs",false)},
-	function() {spawn_line("Started Xeon E5-2680 CPU",false)},
-	function() {spawn_line("Downloaded more RAM",false)},
-	function() {spawn_line("Downloaded more CPU",false)},
-	function() {spawn_line("Purchase a new GPU",true)},
-	function() {spawn_line("SwapFS loaded",false)},
-	function() {spawn_line("Starting The Finals",false)},
-	function() {spawn_line("Started The Finals",false)},
-	function() {spawn_line("Starting NetworkManager",false)},
-	function() {spawn_line("Starting Apache (the helicopter)",false)},
-	function() {spawn_line("Starting Bluetooth",false)},
-	function() {spawn_line("Started NetworkManager",false)},
-	function() {spawn_line("Started Apache (the helicopter)",false)},
-	function() {spawn_line("Started Bluetooth",false)},
-	function() {spawn_line("Starting weatherCLI",false)},
-	function() {spawn_line("Starting package manager",false)},
-	function() {spawn_line("Started package manager",false)},
-	function() {spawn_line("Why are you reading this",false)}
-	];	
 
-	var sizeof_funct = array_of_functions.length -1;
+	var sizeof_funct = array_of_functions_for_boot.length -1;
 	var index_at = 0;
-	for (var item_at of array_of_functions) {
+	for (var item_at of array_of_functions_for_boot) {
 		if(debug != true) {
 			await sleep(Math.random() * TEXT_LOAD_WAIT);		
 		}

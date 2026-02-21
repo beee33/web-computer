@@ -1,4 +1,8 @@
 you can add
-bash -c "echo Updates every 1 minute: > <website dir>/uptime.txt && tuptime >> <website dir>/uptime.txt && echo Last update:\n >> <website dir>/uptime.txt && date >> <website dir>/uptime.txt"
-to a system service file and timer to make it represent your system's uptime
-make sure to replace  <website dir> with your websites directory
+
+bash -c "echo Updates every 1 minute: > &#60website dir&#62/uptime.txt && tuptime >> &#60website dir&#62/uptime.txt && echo Last update:\n >> &#60website dir&#62/uptime.txt && date >> &#60website dir&#62/uptime.txt"
+
+to a system service file and timer or a cron job to make it represent your system's uptime
+make sure to replace &#60website dir&#62 with your websites directory
+
+the command tuptime can be downloaded from: https://github.com/rfmoz/tuptime

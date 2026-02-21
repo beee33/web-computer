@@ -38,8 +38,8 @@ let wallpaper_image;
 let account_image;
 let circleMask;
 function preload() {
-	wallpaper_image = loadImage('/wallpaper.webp');
-	account_image = loadImage('/moon.jpg');
+	wallpaper_image = loadImage(themes_wall[THEME_NAME]);
+	account_image = loadImage(USER_ICON);
 	circleMask = createGraphics(logo_size, logo_size);
 
 
@@ -129,7 +129,7 @@ function draw() {
 
 		rectMode(CORNER);
 		textSize(15);
-		text(' beeOS  V0.1b',new_x+border_width ,new_y+border_width+box_top_height/2);
+		text(OS_NAME+" "+VER_NAME,new_x+border_width ,new_y+border_width+box_top_height/2);
 
 
 		var acc_image_x = new_x + 30;
@@ -156,7 +156,7 @@ function draw() {
 		strokeWeight(1);
 		strokeCap(ROUND);
 		//rectMode(CENTER);
-		text("Welcome to beeOS!",acc_image_x+logo_size+19 ,acc_image_y+guest_bttn_height/2,(logon_width-30-(acc_image_x+logo_size+10 )+new_x) ,guest_bttn_height);
+		text("Welcome to "+OS_NAME+"!",acc_image_x+logo_size+19 ,acc_image_y+guest_bttn_height/2,(logon_width-30-(acc_image_x+logo_size+10 )+new_x) ,guest_bttn_height);
 		pop();
 	}
 	
