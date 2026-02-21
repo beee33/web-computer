@@ -77,7 +77,7 @@ npx http-server ./ -o -p 9999
 
 
 <h3>Adding your own app</h3>
-In order to create you own app. you need to edit main_thread.js and make a new applicaiton using make_application()
+In order to create you own app. you need to edit globals.js and make a new applicaiton using make_application()
 <br>
 where the first parameter is application id, then the name of the function, titlebar name, file path of icon, location on desktop, application type( the only option is app), as well as the function envoked when the user clicks on the icon. 
 <br>
