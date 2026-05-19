@@ -268,7 +268,7 @@ function make_meme() {
 
   var text =
     `
-		<div style="" class="text_color">
+		<div style="" class="window_context_text_color_class">
 			<div style="height: 470px;text-align: center" id="` +
     meme_id +
     `">
@@ -312,7 +312,7 @@ function make_hack() {
 
 function make_about_me() {
   var text = `
-	<div style="margin-top: 20px;margin-left: 10px;margin-right: 10px;" class="text_color">
+	<div style="margin-top: 20px;margin-left: 10px;margin-right: 10px;" class="window_context_text_color_class">
         <span style="font-size:x-large">Words</span>
         <div class="line_br"></div>
         <div class="line_br"></div>
@@ -327,7 +327,7 @@ function make_about_me() {
 
 // shows a list of attempted breaches into my server
 function make_ips() {
-  var text_full = `<div class="text_color">
+  var text_full = `<div class="window_context_text_color_class">
 		<div style="margin-left: 20px;margin-right: 20px;">
 		<h3>This is a list of all the IPs that attempted to exploit my webserver:</h3>
 		<span style="font-weight: bold;color: darkblue;" onclick=about_list()>Learn more by clicking Here</span>
@@ -452,7 +452,7 @@ function make_teto() {
   var ascii_id = "ascii" + window_id;
 
   var text_full =
-    `<div class="ascii_held text_color" id = "` +
+    `<div class="ascii_held window_context_text_color_class" id = "` +
     ascii_id +
     `" style="overflow: hidden;">`;
   fetch("teto.json")
@@ -594,7 +594,7 @@ function make_web_browser() {
 	<div id = ` +
       browser_id +
       `>
-		<div class = "sec_color text_color_alt" style="width:` +
+		<div class = "window_border_color_class window_context_text_color_class" style="width:` +
       browser_width +
       `px;height:` +
       box_top_height +
@@ -604,7 +604,7 @@ function make_web_browser() {
 
 			<div onclick= move_window_back("` +
       browser_id +
-      `") class = "back_bttn main_color" style="display: flex;justify-content: center;align-items: center;text-align: center;position:fixed;width:` +
+      `") class = "back_bttn window_context_background_color_class" style="display: flex;justify-content: center;align-items: center;text-align: center;position:fixed;width:` +
       box_top_height +
       `px;height:` +
       box_top_height +
@@ -613,7 +613,7 @@ function make_web_browser() {
 			</div>
 			<div onclick= move_window_forward("` +
       browser_id +
-      `") class = "forward_bttn main_color" style="display: flex;justify-content: center;align-items: center;text-align: center;position:fixed;position:fixed;margin-left:` +
+      `") class = "forward_bttn window_context_background_color_class" style="display: flex;justify-content: center;align-items: center;text-align: center;position:fixed;position:fixed;margin-left:` +
       (box_top_height + border_width) +
       `px;width:` +
       box_top_height +
@@ -624,7 +624,7 @@ function make_web_browser() {
 
 			</div>
 
-			<input class = "url_select main_color" placeholder="To prevent clickjacking attacks, only some websites can load in this browser." style="border: none;border-width: 0;box-shadow: none;outline: none;position:fixed;margin-left:` +
+			<input class = "url_select window_context_background_color_class" placeholder="To prevent clickjacking attacks, only some websites can load in this browser." style="border: none;border-width: 0;box-shadow: none;outline: none;position:fixed;margin-left:` +
       (box_top_height * 2 + border_width * 2) +
       `px;width:` +
       (browser_width - box_top_height * 6 - border_width * 4) +
@@ -635,7 +635,7 @@ function make_web_browser() {
 			</input>
 			<div onclick=search_web_browser("` +
       browser_id +
-      `") class = "search_bttn main_color" style="display: flex;justify-content: center;align-items: center;text-align: center;position:fixed;margin-left:` +
+      `") class = "search_bttn window_context_background_color_class" style="display: flex;justify-content: center;align-items: center;text-align: center;position:fixed;margin-left:` +
       (browser_width - box_top_height * 4) +
       `px;width:` +
       box_top_height * 4 +
@@ -685,7 +685,7 @@ function make_credits() {
     300,
     "Credits",
     `
-       	                <div style="word-wrap: anywhere;margin-top: 20px;margin-left: 10px;margin-right: 10px;" class="text_color">
+       	                <div style="word-wrap: anywhere;margin-top: 20px;margin-left: 10px;margin-right: 10px;" class="window_context_text_color_class">
         <span style="font-size:x-large">Credits:</span>
         <div class="line_br"></div>
         <div class="line_br"></div>
@@ -728,7 +728,7 @@ function make_git() {
     350,
     "My Code",
     `
-<div style="word-wrap: anywhere;margin-top: 20px;margin-left: 10px;margin-right: 10px;" class="text_color">
+<div style="word-wrap: anywhere;margin-top: 20px;margin-left: 10px;margin-right: 10px;" class="window_context_text_color_class">
         <div class="line_br"></div>
         <div class="line_br"></div>
 
@@ -795,7 +795,7 @@ function make_time() {
       var text_size = "";
 
       html =
-        `<div class="text_color" style="align-content: center;white-space: preserve;overflow:hidden;` +
+        `<div class="window_context_text_color_class" style="align-content: center;white-space: preserve;overflow:hidden;` +
         text_size +
         `margin-top: 5px;margin-right: 10px;margin-left: 10px;">`;
       html += xhttp.responseText;
@@ -817,7 +817,7 @@ function make_about() {
     text_size = `font-size:30px;`;
   }
   html =
-    `<div class="text_color" style="overflow:hidden;` +
+    `<div class="window_context_text_color_class" style="overflow:hidden;` +
     text_size +
     `margin-top: 5px;margin-right: 10px;margin-left: 10px;">`;
   if (is_mobile) {
@@ -908,7 +908,7 @@ function make_warn(text, sporadic) {
     (win_height - block_height) / 2 +
     `px;height:` +
     block_height +
-    `px;display: flex;" class="text_color">
+    `px;display: flex;" class="window_context_text_color_class">
 		<div style="margin:` +
     (block_height - img_height) / 2 +
     `px; margin-right: auto;">
@@ -1072,7 +1072,7 @@ function push_icons_to_desktop() {
 				</div>
 
 				</div>
-				<div class ="sel_color" style="font-size:13px;text-align: center;margin-left: 5px;margin-right: 5px;">
+				<div class ="window_title_text_color_class" style="font-size:13px;text-align: center;margin-left: 5px;margin-right: 5px;">
 				` +
         installed_programs[icon_cur]["human_name"] +
         `
@@ -1318,7 +1318,9 @@ function load_theme(theme_name) {
   load_color_bttns("speaker_quiet", "images/speaker_quiet.png", -10);
   document.getElementById("background").style.backgroundImage =
     "url('" + current_theme.wallpaper_path + "')";
-  for (var element of document.getElementsByClassName("sec_color")) {
+  for (var element of document.getElementsByClassName(
+    "window_border_color_class",
+  )) {
     element.style.backgroundColor =
       "rgb(" +
       current_theme.window_border_color[0] +
@@ -1328,7 +1330,7 @@ function load_theme(theme_name) {
       current_theme.window_border_color[2] +
       ")";
   }
-  for (var element of document.getElementsByClassName("style_vol")) {
+  for (var element of document.getElementsByClassName("volume_slider_color")) {
     element.style.background =
       "rgb(" +
       current_theme.window_title_text_color[0] +
@@ -1338,7 +1340,9 @@ function load_theme(theme_name) {
       current_theme.window_title_text_color[2] +
       ")";
   }
-  for (var element of document.getElementsByClassName("main_color")) {
+  for (var element of document.getElementsByClassName(
+    "window_context_background_color_class",
+  )) {
     element.style.backgroundColor =
       "rgb(" +
       current_theme.window_context_background_color[0] +
@@ -1348,7 +1352,9 @@ function load_theme(theme_name) {
       current_theme.window_context_background_color[2] +
       ")";
   }
-  for (var element of document.getElementsByClassName("sel_color")) {
+  for (var element of document.getElementsByClassName(
+    "window_title_text_color_class",
+  )) {
     element.style.color =
       "rgb(" +
       current_theme.window_title_text_color[0] +
@@ -1358,17 +1364,9 @@ function load_theme(theme_name) {
       current_theme.window_title_text_color[2] +
       ")";
   }
-  for (var element of document.getElementsByClassName("text_color")) {
-    element.style.color =
-      "rgb(" +
-      current_theme.window_context_text_color[0] +
-      "," +
-      current_theme.window_context_text_color[1] +
-      "," +
-      current_theme.window_context_text_color[2] +
-      ")";
-  }
-  for (var element of document.getElementsByClassName("text_color_alt")) {
+  for (var element of document.getElementsByClassName(
+    "window_context_text_color_class",
+  )) {
     element.style.color =
       "rgb(" +
       current_theme.window_context_text_color[0] +
@@ -1483,8 +1481,6 @@ function make_exit_bttn(canvas_id) {
     ctx.lineCap = "square";
     ctx.stroke();
   } else {
-    // var drop_canvas = document.getElementById(canvas_id).getContext("2d");
-
     var image_margin = 0;
 
     const img = new Image();
@@ -1577,12 +1573,12 @@ function make_theme_window() {
       text_icon_size +
       ` 30px 30px;">
 
-			<div class="main_color" style="display: flex;justify-content: center;align-items: center;text-align: center;grid-column:1;grid-row: 1;"><span class = "text_color" style="` +
+			<div class="window_context_background_color_class" style="display: flex;justify-content: center;align-items: center;text-align: center;grid-column:1;grid-row: 1;"><span class = "window_context_text_color_class" style="` +
       font_size +
       `">` +
       name +
       `</span></div>
-			<div class ="sec_color" style="grid-column:2;grid-row: 1;"></div>
+			<div class ="window_border_color_class" style="grid-column:2;grid-row: 1;"></div>
 			<div style="display: flex;background-color:#` +
       rgb_to_hex(theme.window_context_background_color) +
       `;color:#` +
@@ -1600,12 +1596,12 @@ function make_theme_window() {
     );
   }
   var inj_code =
-    `<div class = "main_color" ><div class = "text_color" style="height:` +
+    `<div class = "window_context_background_color_class" ><div class = "window_context_text_color_class" style="height:` +
     help_height +
     `px;display: flex;justify-content: center;align-items: center;text-align: center;"><span style="` +
     font_size_about +
     `">Click the row to Select theme!</span></div>
-			<div class ="sec_color" style="width:100%;height:` +
+			<div class ="window_border_color_class" style="width:100%;height:` +
     border_width +
     `px;"></div>
 
@@ -1640,20 +1636,21 @@ async function load_navbar() {
   }
 
   document.getElementById("nav_bar").style.height = taskbar_height + "px";
-  document.getElementById("nav_bar").className = "sec_color sel_color";
+  document.getElementById("nav_bar").className =
+    "window_border_color_class window_title_text_color_class";
   if (!is_mobile) {
     document.getElementById("nav_bar").style.bottom = "0px";
   }
   const node = document.createElement("div");
 
-  node.className = "sec_color";
+  node.className = "window_border_color_class";
   node.style.position = "fixed";
   node.style.right = "0px";
   node.style.width = "100px";
   //node.style.height = "100%";
   node.style.userSelect = "none";
   node.innerHTML +=
-    '<h5 class ="sel_color sec_color" id=time_date style=" margin: 0px;text-align: center;font-size: 15px;margin-top: 3px;">' +
+    '<h5 class ="window_title_text_color_class window_border_color_class" id=time_date style=" margin: 0px;text-align: center;font-size: 15px;margin-top: 3px;">' +
     get_time() +
     '</h5><h5 id=date_date style="margin: 0px;text-align: center;font-size: 10px;">' +
     get_date() +
@@ -1665,7 +1662,7 @@ async function load_navbar() {
   var node2 = document.createElement("canvas");
 
   node2.id = "dropper";
-  node2.className = "sec_color";
+  node2.className = "window_border_color_class";
   node2.style.position = "fixed";
   node2.style.right = node.style.width;
   node2.style.width = taskbar_height + "px";
@@ -1692,7 +1689,7 @@ async function load_navbar() {
 
     node6.style = "align-items: center;display: flex;";
     node6.className = "";
-    node5.className = "sec_color style_vol slider";
+    node5.className = "window_border_color_class volume_slider_color slider";
     node5.style =
       "-webkit-appearance: none;border-radius: 7px; margin-left: -5px;margin-right: -5px";
     speaker_img_ld.style = "float:right;";
@@ -1745,7 +1742,7 @@ async function load_navbar() {
 
   const node3 = document.createElement("div");
 
-  node3.className = "sec_color";
+  node3.className = "window_border_color_class";
   node3.style.position = "fixed";
   node3.style.left = "0px";
   node3.style.width = taskbar_height + "px";
@@ -1771,7 +1768,7 @@ async function load_navbar() {
   if (!is_mobile) {
     const node4 = document.createElement("div");
 
-    node4.className = "sec_color";
+    node4.className = "window_border_color_class";
     node4.style.position = "fixed";
     node4.style.display = "flex";
     node4.style.left =
@@ -1889,7 +1886,7 @@ function make_window(
       `px;height:` +
       (box_top_height + parseInt(border_width) * 2) +
       `px;position: absolute;\">
-			<span class ="sel_color" style = "margin-left: 5px;font-size: ` +
+			<span class ="window_title_text_color_class" style = "margin-left: 5px;font-size: ` +
       (box_top_height - 6) +
       `px;position: absolute;margin-top: ` +
       (3 + border_width / 2) +
@@ -1898,7 +1895,7 @@ function make_window(
       `</span>
 			</div>
 
-			<div class = "sec_color" style="height:` +
+			<div class = "window_border_color_class" style="height:` +
       (box_top_height + border_width * 2) +
       `px;">
 				<canvas onclick=kill_window("` +
@@ -1920,10 +1917,10 @@ function make_window(
 		</div>
 		<div onclick=move_to_front_window("` +
       screen_id +
-      `") class = "sec_color" style="height:` +
+      `") class = "window_border_color_class" style="height:` +
       (screen_height + border_width) +
       `px;">
-			<div class = "sec_color" style="display: grid; grid-template-columns: auto auto auto;">
+			<div class = "window_border_color_class" style="display: grid; grid-template-columns: auto auto auto;">
 
 
 			<div style=" grid-area: 1 / 1 / span 1 / span 1;width:` +
@@ -1931,7 +1928,7 @@ function make_window(
       `px">
 
 			</div>
-			<div class = "main_color" style="overflow-x:scroll;width:` +
+			<div class = "window_context_background_color_class" style="overflow-x:scroll;width:` +
       screen_width +
       `px; height:` +
       screen_height +
@@ -1971,7 +1968,7 @@ function make_window(
       `px; z-index:` +
       z_index +
       `; position:fixed;">
-			<div class = "main_color" style ="overflow-x:scroll;position: absolute;height:` +
+			<div class = "window_context_background_color_class" style ="overflow-x:scroll;position: absolute;height:` +
       (1 - HOME_ICON_MOBILE) * 100 +
       `%; width:100%;">
 				` +
@@ -2001,7 +1998,8 @@ function make_window(
 		</div>`;
     document.getElementById("nav_bar").style.visibility = "hidden";
     document.getElementById("content").appendChild(node);
-    document.getElementById(bar_id).className = "sec_color sel_color";
+    document.getElementById(bar_id).className =
+      "window_border_color_class window_title_text_color_class";
   }
   load_theme(CHOOSEN_THEME_NAME);
   make_exit_bttn(canvas_id);
